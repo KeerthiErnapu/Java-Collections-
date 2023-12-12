@@ -1,0 +1,19 @@
+class Solution {
+    public boolean isIsomorphic(String s, String t) {
+        HashMap<Character,Character> ha=new HashMap();
+        for(int i=0;i<s.length();i++){
+            if(ha.containsKey(s.charAt(i))){
+                if(ha.get(s.charAt(i))!=t.charAt(i)){
+                    return false;
+                }
+            }
+            else{
+              if(ha.containsValue(t.charAt(i))){
+                  return false;
+              }
+              ha.put(s.charAt(i),t.charAt(i));
+            }
+        }
+        return true;
+    }
+}
